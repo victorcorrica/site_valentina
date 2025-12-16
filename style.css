@@ -1,0 +1,255 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #000511, #001122);
+  color: #eaf3ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#container {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.pagina {
+  display: none;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 20px;
+  box-sizing: border-box;
+}
+
+.pagina.ativa {
+  display: flex;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.conteudo {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== Textos ===== */
+h1, h2 {
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 1rem;
+  color: #d9e6ff;
+  line-height: 1.6;
+  margin: 5px 0;
+  text-align: justify;
+  text-align-last: center;
+}
+
+/* ===== Botões ===== */
+button {
+  background-color: #002d66;
+  color: #eaf3ff;
+  border: none;
+  padding: 10px 28px;
+  font-size: 1rem;
+  border-radius: 10px;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 80, 200, 0.3);
+}
+
+button:hover {
+  background-color: #004299;
+  box-shadow: 0 0 14px rgba(0, 140, 255, 0.5);
+  transform: scale(1.05);
+}
+
+/* ===== Blocos ===== */
+.gosto, .foto-bloco {
+  background: rgba(0, 51, 102, 0.25);
+  border-radius: 15px;
+  padding: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 50, 0.6);
+  margin-top: 10px;
+}
+
+/* ===== Fotos normais (falas dos desenhos) ===== */
+.foto-bloco img {
+  width: 70%;
+  max-width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  margin-bottom: 10px;
+}
+
+/* ===== Fotos específicas para páginas da fala dos desenhos ===== */
+#agua\\.e\\.fogo_casal,
+#araras_azul,
+#hoteltransylvania_casal,
+#Kristoff_casal,
+#olaf\\.e\\.ana_casal,
+#rapunzel_casal {
+  width: 85%;
+  max-width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  margin-bottom: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#agua\\.e\\.fogo_casal:hover,
+#araras_azul:hover,
+#hoteltransylvania_casal:hover,
+#Kristoff_casal:hover,
+#olaf\\.e\\.ana_casal:hover,
+#rapunzel_casal:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+/* ===== Fotos grandes (somente da parte "Sua beleza") ===== */
+#paginaBeleza2 img,
+#paginaBeleza3 img,
+#paginaBeleza4 img,
+#paginaBeleza5 img,
+#paginaBeleza6 img,
+#paginaBeleza7 img {
+  width: 95%;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#paginaBeleza2 img:hover,
+#paginaBeleza3 img:hover,
+#paginaBeleza4 img:hover,
+#paginaBeleza5 img:hover,
+#paginaBeleza6 img:hover,
+#paginaBeleza7 img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* ===== Guaxinim ===== */
+#emojiGuaxinim {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#emojiGuaxinim:hover {
+  transform: scale(1.25);
+}
+
+.guaxinim-texto {
+  display: none;
+  margin-top: 8px;
+  color: #cce0ff;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.guaxinim-texto.mostrar {
+  display: block;
+}
+
+/* ====== Efeito suave do botão "Minha resposta" ====== */
+.bloco-resposta {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.6s ease, max-height 0.6s ease;
+}
+
+.bloco-resposta.show {
+  opacity: 1;
+  max-height: 1000px;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+  h1, h2 { font-size: 1.3rem; }
+  p { font-size: 0.95rem; }
+
+  /* Fotos da beleza responsivas */
+  #paginaBeleza2 img,
+  #paginaBeleza3 img,
+  #paginaBeleza4 img,
+  #paginaBeleza5 img,
+  #paginaBeleza6 img,
+  #paginaBeleza7 img {
+    width: 95%;
+    max-width: 500px;
+  }
+
+  /* Fotos normais continuam menores */
+  .foto-bloco img {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  /* Fotos dos desenhos responsivas */
+  #agua\\.e\\.fogo_casal,
+  #araras_azul,
+  #hoteltransylvania_casal,
+  #Kristoff_casal,
+  #olaf\\.e\\.ana_casal,
+  #rapunzel_casal {
+    width: 90%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  body { overflow-y: auto; padding: 15px; }
+  .conteudo { gap: 8px; }
+
+  /* Fotos da beleza no celular */
+  #paginaBeleza2 img,
+  #paginaBeleza3 img,
+  #paginaBeleza4 img,
+  #paginaBeleza5 img,
+  #paginaBeleza6 img,
+  #paginaBeleza7 img {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  /* Fotos normais continuam pequenas */
+  .foto-bloco img {
+    width: 90%;
+    max-width: 200px;
+  }
+
+  /* Fotos dos desenhos no celular */
+  #agua\\.e\\.fogo_casal,
+  #araras_azul,
+  #hoteltransylvania_casal,
+  #Kristoff_casal,
+  #olaf\\.e\\.ana_casal,
+  #rapunzel_casal {
+    width: 95%;
+    max-width: 250px;
+  }
+
+  button { font-size: 0.9rem; padding: 8px 22px; }
+}
